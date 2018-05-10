@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Restaurant Search</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+      <header role="banner">
+        <h1 class="text-center">Restaurant Search</h1>
+      </header>
+      <main role="main">
+        <form action="#" class="query-form" role="form">
+          <label for="zipcode">Enter the zipcode :</label>
+          <input type="text" name="zipcode" id="zipcode" required />
+          <button type="submit" class="js-submit">Search</button>
+        </form>
+        <section class="js-results" aria-live="assertive" hidden>
+          <div id="map"></div>
+          <div id="resultsDiv"></div>
+        </section>
+      </main>
+    
+    <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>  
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7B_ofAzLU1alRq_vQhShyIuJZdpL_k_M&libraries=places"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
