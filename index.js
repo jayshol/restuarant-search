@@ -4,18 +4,19 @@ let map;
 let zipcode;
 
 function handleSubmit(){
-
   $('.query-form').submit((event) => {
     event.preventDefault();
     zipcode = $("#zipcode").val();
-    const geocode_query = {
+    getLocationDetails(zipcode);
+    $('#zipcode').val('');
+  });
+}
+
+function getLocationDetails(zipcode){
+  const geocode_query = {
       address: zipcode
     };
-
-    $.getJSON(geoCodeEndpoint, geocode_query, getCoOrdinates);
-    
-  });
-
+  $.getJSON(geoCodeEndpoint, geocode_query, getCoOrdinates);
 }
 
 function getCoOrdinates(data){
@@ -35,25 +36,26 @@ function getCoOrdinates(data){
     };
 
     let service = new google.maps.places.PlacesService(map);
-    service.textSearch(queryObj, displayResults);
+    service.textSearch(queryObj, displayRestaurantListings);
   }
  
 }
 
-function displayResults(dataResults, status){
+function displayRestaurantListings(dataResults, status){
   if(status === google.maps.places.PlacesServiceStatus.OK){
+    $('#restaurantListings').html('');
     for(let i=0;i<dataResults.length;i++){
-   let   marker = new google.maps.Marker({
-        map:map,
-        title:dataResults[i].name,
-        position: dataResults[i].geometry.location
-      });
+      let marker = new google.maps.Marker({
+            map:map,
+            title:dataResults[i].name,
+            position: dataResults[i].geometry.location
+          });
 
-    let  $rowHtml = $(`<div class="rowClass">
+      let  $rowHtml = $(`<div class="rowClass">
                         <div class="nameClass">${dataResults[i].name}</div>
                         <p>${dataResults[i].formatted_address}</p>
                       </div>`);
-      $("#resultsDiv").append($rowHtml);
+      $("#restaurantListings").append($rowHtml);
         
       let request = {
         placeId : `${dataResults[i].place_id}`
@@ -65,26 +67,23 @@ function displayResults(dataResults, status){
                               <span><strong>Rating : </strong>${dataResults[i].rating}</span>
                             </div>`;
 
-  let infoWindow = new google.maps.InfoWindow({
-    content: contentString
-  });
+      let infoWindow = new google.maps.InfoWindow({
+        content: contentString
+      });
 
-  marker.addListener('click', function(){ 
-    infoWindow.open(map, marker);
-  });
+      marker.addListener('click', function(){  
+        infoWindow.open(map, marker);
+      });
 
-  $rowHtml.click(function(){
-    infoWindow.open(map, marker);
-  });
+      $rowHtml.click(function(){   
+        infoWindow.open(map, marker);
+      });
 
     }
-  }
-  
+  } 
 }
 
-function showDetails(data){
-  console.log(data);
-  
-}
-
-$(handleSubmit());
+$(function(){
+  handleSubmit();
+  getLocationDetails(92882);
+});
