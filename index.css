@@ -74,13 +74,12 @@ body{
   background-color: #0990FF; 
 }
 
-html{
-  position:relative;
-}
+
 
 main{
   margin: 120px 0 20px 0;
  /* border: 1px solid black;  */
+ padding-bottom: 40px;
   
 }
 
@@ -146,21 +145,37 @@ h1{
    height: auto;
    margin-bottom: 5px;
  }
+ footer{
+   right:0;
+   bottom:0;
+   margin: 25px 0 0 0;
+ }
+ html{
+  position:relative;  
+  }
 }
 
-footer{
-  position: absolute;
-  right:0px;
-  bottom:0px;
+footer{  
+  position: absolute;  
   background-color: #1216CC;
   color: white;
-  height: 30px;
+  height: 40px;
   width:100%;
-  margin-top: 15px;
+  bottom:0;   
+  margin: 0 0 0 0;
+  text-align: center;  
 }
 
-body{
-/*  position:relative;  */
+footer > p{
+  padding:5px 0 0 0;
+  margin:0;
+  font-size: 14px;
+}
+
+container{
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 
