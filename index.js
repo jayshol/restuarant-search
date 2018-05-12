@@ -20,8 +20,7 @@ function getLocationDetails(zipcode){
 }
 
 function getCoOrdinates(data){
-  if(data.status === "OK"){
-    $('.js-results').prop('hidden', false);
+  if(data.status === "OK"){    
     const coords =  data.results[0].geometry.location;
     const str = 'restaurants+near+' + zipcode;
     map = new google.maps.Map(document.getElementById('map'), {
