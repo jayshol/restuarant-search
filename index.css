@@ -7,21 +7,23 @@ body * {
 }
 
 #map {
-  height: 300px;
-  width: 30%;
+  height: 400px;
+  width: 80%;
   border:1px solid black;
-  display:inline-block;
-  margin-right:15px;
+  display:block;
+  margin: 30px auto 0 auto;
+  
 }
 
 #restaurantListings{
   height: 300px;
-  width: 30%;
+  width: 40%;
   border : 1px solid black;
   overflow-y:auto;
-  display: inline-block;
+  display: block;
   margin-left: 15px;
   padding:0;
+  margin:30px auto 0 auto;
 }
 section{
   font-size:0;
@@ -34,44 +36,86 @@ section{
 .nameClass{
   font-weight: bold;
   margin-bottom: 0px;
-  font-size: 14px;
+  font-size: 18px;
+  height: 80px;
+  width: 70%;
+  margin-left:5px;
+}
+.nameClass h4{
+  margin:0; 
 }
 
+.nameClass h5{
+  margin-bottom:0;  
+}
+/*
 .rowClass > p{
   font-size: 12px;
   margin:0;
   padding:2px;
-}
+} */
 
 .rowClass{
-  background-color:#424599;
+  background-color:#50DA69;
   margin: 0;
   cursor: pointer;
   padding:4px;  
   border:.5px solid #EFEFEF;
-  color:white;
+  color:#2C3811;
+  font-size:0;
+  list-style-type: none;
+  width: 100%;
+  text-align: left;
+  vertical-align: middle;
+  
+}
+
+.rowImage{
+  display: inline-block;
+  border: 1px solid white; 
+ /* height: 50px; */
+  
+}
+
+.nameDiv{
+  display: inline-block;  
+  width: 300px;
+ 
+/*  height:50px; */
+  
+}
+
+.noResults{
+  font-size: 18px;
+  font-weight:bold;
+
+}
+
+.nameDiv > p{
+  font-size: 12px;
+  margin: 0;
+  padding:0;
 }
 
 .rowClass:hover, .rowClass:active{
-  background-color: #CC5F2A;
+  background-color: #ACDA42;
 }
 
 header{
   width:100%;
-  height: 70px;
-  background-color:#1216CC;
+  height: 50px;
+  background-color:#108338;
   top:0;
   left:0;
-  position:absolute;
-  font-family: 'Pacifico', cursive;
+  position:absolute;  
   color:white;
-  padding:15px;
+  padding-top: 5px;
 }
 
 body{
   margin:0;
   padding-top:0;
-  background-color: #0990FF;
+  background-color: #061445;
   min-height:100vh;
 }
 html{
@@ -79,32 +123,55 @@ html{
 }
 
 main{
-  margin: 120px 0 20px 0;
+  margin: 50px 0 20px 0;
   padding-bottom: 40px;
+  border: 1px solid black;
 }
 
 
 #zipcode{
-  margin: 0 10px 30px 10px;
-  height: 30px;
+ /* margin: 0 10px 30px 10px; */
+  height: 33px;
+  width: 150px;
   border: 1px solid black;
   border-radius: 5px;
+  display:inline-block;
+  text-align:center;
+  font-size: 18px;
 }
 
-.query-form > button{
+.query-form  button{
   height: 30px;
   width: 100px;
   background-color: lightblue;
   border-radius: 5px;
   font-size: 14px;
   font-weight: bold;
+  margin: 5px; 
 }
 
+.query-form h2{
+  text-align: center;
+}
+
+#distance{
+  display:inline-block;
+}
 
 .query-form {
-  height: 80px;
-  width: 300px;
+ /* height: 150px; */
+  width:100%;
   margin: 0 auto;
+  text-align: center;  
+}
+/*
+.query-form  div{
+  padding: 5px;
+} */
+
+.query-form input{
+  margin-right: 5px;
+ 
 }
 
 h2{
@@ -122,22 +189,30 @@ h1{
    width:90%;
    padding:0;
    margin-bottom: 15px;
-   margin-right:0;
+  margin: 0 auto 20px auto;
  }
  
  #restaurantListings{
    width: 90%;
    padding:0;
-   margin-left:0;
+   margin:0 auto;
  }
  
  #zipcode{
-   display:block;
-   width:100%;
+   display:inline-block;
+   width:90%;
    margin:0 0 10px 0;
  }
  header{
    height:auto;
+ }
+
+ .checkboxClass{
+   width: 90%;
+ }
+ select{
+   width:90%;
+   margin-bottom:15px;
  }
  
  .query-form{
@@ -178,10 +253,85 @@ footer > p{
   margin:0;
   border: .5px solid lightblue;
 }
+/*
+p  {
+  height: auto;
+  width: 75%;
+  margin:0 auto;
+}*/
+
+h3{
+  font-weight: bold;
+  width:100%;
+  float:left;
+  font-size: 22px;
+  margin-bottom: 5px;  
+}
 
 
+#restaurantImg{
+  height: 100px;
+  width:110px;
+}
 
+#contentDiv{
+  font-size:0px;
+  border: 1px solid black;
+}
 
+#imgDiv, #infoDiv{
+  display:inline-block;
+}
 
+#infoDiv{
+  font-size: 12px;
+  padding:5px;
+}
 
+#restaurantImg1{
+  height: 100px;
+  width: 110px;
+}
 
+.checkboxClass{
+  display: inline-block;
+  vertical-align: middle;
+  margin:10px;
+}
+
+.checkboxClass input{
+  transform: scale(1.5);
+  float:left;
+}
+
+.checkboxClass label{
+  word-wrap: break-word;
+  line-height: 16px; 
+  float: left;
+  font-size: 18px;
+}
+
+select{
+  height: 30px;
+  width: 150px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+
+.formLabelClass{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.descriptionClass{
+  font-size: 20px;    
+  text-align:left;
+  margin-bottom:5px;
+}
+
+.textClass{
+  width:75%; 
+  margin: 0 auto;
+  padding:0;
+}

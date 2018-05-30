@@ -11,16 +11,49 @@
     <div class="container">
       <header role="banner">
         <h1 class="text-center">Restaurant Search</h1>
-      </header>
-      <main role="main">
-        <form action="#" class="query-form" role="form">
-          <input type="text" name="zipcode" id="zipcode" placeholder=" Enter your zipcode" required />
-          <button type="submit" class="js-submit">Search</button>
+      </header>      
+      <main role="main">                       
+        <form action="#" class="query-form" role="form">                    
+          <div>
+            <div class="textClass">
+              <p class="descriptionClass">Search for all the nearby restaurants in your area by providing the details below.</p>
+            </div> 
+            <span class="formLabelClass">Find restaurants near :</span>
+            <input type="text" name="zipcode" id="zipcode" placeholder="zipcode" required />         
+            <select name="distance" id="distance">
+              <option value='5'>Within 5 miles</option>
+              <option value='10'>Within 10 miles</option>
+              <option value="15">Within 15 miles</option>
+              <option value='20'>Within 20 miles</option>
+              <option value='25'>Within 25 miles</option>
+            </select>
+            <select name="cuisine" id="cuisine">
+              <option value="all">All Cuisines</option>
+              <option value="chinese">Chinese Cuisine</option>
+              <option value="mexican">Mexican Cuisine</option>
+              <option value="indian">Indian Cuisine</option>
+              <option value="american">American Cuisine</option>
+              <option value="italian">Italian Cuisine</option>
+            </select>
+            <div class="checkboxClass">            
+              <input type="checkbox" id="openNow" />
+              <label for="openNow">Open Now</label>
+            </div>
+            <div class="checkboxClass">
+              <input type="checkbox" id="vegetarian" />
+              <label for="vegetarian">Vegetarian</label>
+            </div>
+            <div class="checkboxClass">            
+              <input type="checkbox" id="vegan" />
+              <label for="vegan">Vegan</label>
+            </div>
+            <button type="submit" class="js-submit">Search</button>
+          </div>
         </form>
         <section class="js-results" aria-live="assertive">
           <div id="map"></div>
           <ul id="restaurantListings"></ul>
-        </section>
+        </section>  
       </main>
       <footer>
         <p>Copyright @ 2018 Restaurant Search Inc. All rights reserved.</p>
