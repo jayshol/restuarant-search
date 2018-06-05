@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Restaurant Search</title>
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="index.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -14,7 +15,7 @@
       </header>      
       <main role="main">                       
         <form action="#" class="query-form" role="form">                    
-          <div>
+          <div class="formDiv">
             <div class="textClass">
               <p class="descriptionClass">Search for all the nearby restaurants in your area by providing the details below.</p>
             </div> 
@@ -51,8 +52,12 @@
           </div>
         </form>
         <section class="js-results" aria-live="assertive">
-          <div id="map"></div>
-          <ul id="restaurantListings"></ul>
+          <div class="mapDiv">
+            <div id="map"></div>
+          </div>
+          <div class="listingsDiv">
+            <ul id="restaurantListings"></ul>
+          </div>
         </section>  
       </main>
       <footer>

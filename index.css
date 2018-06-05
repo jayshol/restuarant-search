@@ -2,24 +2,30 @@ body * {
   box-sizing: border-box;
 }
 
+body, html{
+  padding: 0;
+  margin: 0;
+  background: #d4415d;  
+}
+
 .text-center{
   text-align: center;
 }
 
 #map {
-  height: 400px;
+  height: 450px;
   width: 80%;
   border:1px solid black;
   display:block;
   margin: 30px auto 0 auto;
-  
+  border-radius: 50%; 
 }
 
 #restaurantListings{
-  height: 300px;
+  height: auto;
   width: 40%;
-  border : 1px solid black;
-  overflow-y:auto;
+  border : 1px solid #48636a;
+  overflow:auto;
   display: block;
   margin-left: 15px;
   padding:0;
@@ -27,68 +33,71 @@ body * {
 }
 section{
   font-size:0;
-  width:99%;
+  width:100%;
   margin:0 auto;
   height:auto;
   text-align: center;
+  padding:0;
+  background-color:#d4415d;
 }
 
 .nameClass{
   font-weight: bold;
-  margin-bottom: 0px;
   font-size: 18px;
   height: 80px;
-  width: 70%;
-  margin-left:5px;
+  width: 80%; 
+  text-align:center;
+  margin:0 auto;
+  padding-top: 10px; 
 }
 .nameClass h4{
   margin:0; 
 }
 
 .nameClass h5{
-  margin-bottom:0;  
+  margin-bottom:0;
+  margin-top:5px;  
 }
-/*
-.rowClass > p{
-  font-size: 12px;
-  margin:0;
-  padding:2px;
-} */
 
-.rowClass{
-  background-color:#50DA69;
+
+.rowClass{ 
   margin: 0;
   cursor: pointer;
   padding:4px;  
-  border:.5px solid #EFEFEF;
-  color:#2C3811;
+  border: 1px solid #48636a; 
+  color:#48636a;
   font-size:0;
   list-style-type: none;
   width: 100%;
   text-align: left;
   vertical-align: middle;
-  
+  line-height: 100px;  
+}
+
+li:nth-child(odd){
+  background-color: #48636a;
+}
+
+li:nth-child(odd)>div{
+  color:white;
 }
 
 .rowImage{
   display: inline-block;
-  border: 1px solid white; 
- /* height: 50px; */
-  
+  line-height: normal;
+  vertical-align: middle;  
 }
 
 .nameDiv{
   display: inline-block;  
-  width: 300px;
- 
-/*  height:50px; */
-  
+  width: 70%;
+  vertical-align: middle;
+  line-height:normal;   
 }
 
 .noResults{
   font-size: 18px;
   font-weight:bold;
-
 }
 
 .nameDiv > p{
@@ -98,13 +107,14 @@ section{
 }
 
 .rowClass:hover, .rowClass:active{
-  background-color: #ACDA42;
+  background-color: #d4415d; 
+  color:white;
 }
 
 header{
   width:100%;
   height: 50px;
-  background-color:#108338;
+  background-color: #d4415d;
   top:0;
   left:0;
   position:absolute;  
@@ -114,8 +124,7 @@ header{
 
 body{
   margin:0;
-  padding-top:0;
-  background-color: #061445;
+  padding-top:0; 
   min-height:100vh;
 }
 html{
@@ -123,31 +132,57 @@ html{
 }
 
 main{
-  margin: 50px 0 20px 0;
-  padding-bottom: 40px;
-  border: 1px solid black;
+  margin: 50px 0 20px 0; 
 }
 
 
-#zipcode{
- /* margin: 0 10px 30px 10px; */
+#zipcode{ 
   height: 33px;
   width: 150px;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 5px;
   display:inline-block;
   text-align:center;
   font-size: 18px;
+  background-color:white;
+}
+
+.formDiv{ 
+  background-color:#d4415d;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 20px;  
+  margin:0;
+
+}
+
+.mapDiv{
+  border: 1px solid white;
+  padding: 0 15px 10px 15px;
+  margin:10px 0 0 -10px;  
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%; 
+  background-color: white;
+}
+
+.listingsDiv{
+  width: 100%;
+  height: auto;
+  background-color:white;
+  margin:0;
+  padding: 5px 0px 40px;
 }
 
 .query-form  button{
   height: 30px;
   width: 100px;
-  background-color: lightblue;
+  background-color: #48636a;
   border-radius: 5px;
   font-size: 14px;
   font-weight: bold;
-  margin: 5px; 
+  margin: 5px;
+  color: white;
+  cursor:pointer;
 }
 
 .query-form h2{
@@ -158,20 +193,14 @@ main{
   display:inline-block;
 }
 
-.query-form {
- /* height: 150px; */
+.query-form { 
   width:100%;
   margin: 0 auto;
   text-align: center;  
 }
-/*
-.query-form  div{
-  padding: 5px;
-} */
 
 .query-form input{
-  margin-right: 5px;
- 
+  margin-right: 5px; 
 }
 
 h2{
@@ -183,13 +212,139 @@ h1{
   padding:0;
   margin:0;
 }
+.rating{
+  color: goldenrod;
+}
 
-@media only screen and (max-width: 640px){
+footer{  
+  position: absolute;  
+  background-color: #48636a;
+  color: white;
+  height: 30px;
+  width:100%;
+  bottom:0; 
+  right:0;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;  
+}
+
+footer > p{
+  padding:7px 0 0 0;
+  margin:0;
+  font-size: 14px; 
+}
+
+.container{
+  position: relative; 
+  min-height: 100vh;
+  width: 100%;
+  margin:0;
+  border: .5px solid lightblue;
+}
+
+h3{
+  font-weight: bold;
+  width:100%;
+  float:left;
+  font-size: 22px;
+  margin-bottom: 5px;  
+}
+
+
+#restaurantImg{
+  height: 100px;
+  width:110px;
+}
+
+#contentDiv{
+  font-size:0px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+#imgDiv, #infoDiv{
+  display:inline-block;
+}
+
+#infoDiv{
+  font-size: 12px;
+  padding:5px;
+  margin:0;
+  vertical-align:top;  
+}
+
+#infoDiv a {
+  width:100px;
+  white-space: nowrap;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display:inline-block;
+}
+
+#infoDiv > h4{
+  width: 160px;
+  margin:5px;
+}
+
+#restaurantImg1{
+  height: 100px;
+  width: 110px;
+}
+
+.checkboxClass{
+  display: inline-block;
+  vertical-align: middle;
+  margin:10px;  
+}
+
+.checkboxClass input{
+  transform: scale(1.5);
+  float:left;
+  background-color: #fdfc69;
+  cursor:pointer;
+}
+
+.checkboxClass label{
+  word-wrap: break-word;
+  line-height: 16px; 
+  float: left;
+  font-size: 18px;
+  cursor:pointer;
+}
+
+select{
+  height: 30px;
+  width: 150px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-left: 15px;
+  cursor:pointer;
+}
+
+.formLabelClass{
+  font-size: 18px; 
+}
+
+.descriptionClass{
+  font-size: 20px;    
+  text-align:left;
+  margin-bottom:5px;
+  margin-left:15px;
+}
+
+.textClass{
+  width:75%; 
+  margin: 0 auto;
+  padding:0;
+}
+
+@media only screen and (max-width: 600px){
  #map{
    width:90%;
    padding:0;
    margin-bottom: 15px;
-  margin: 0 auto 20px auto;
+   margin: 0 auto 20px auto;
  }
  
  #restaurantListings{
@@ -228,110 +383,57 @@ h1{
 
 }
 
-footer{  
-  position: absolute;  
-  background-color: #1216CC;
-  color: white;
-  height: 40px;
-  width:100%;
-  bottom:0; 
-  right:0;
-  margin: 0;
-  text-align: center;  
+@media only screen 
+    and (max-device-width: 640px), 
+    only screen and (max-device-width: 667px), 
+    only screen and (max-width: 480px){
+  #restaurantListings{
+   width: 90%;
+   padding:0;
+   margin:0 auto;
+ }
+ #map{
+   margin-top: 10px;
+ }
+ .nameDiv{
+   max-width: 300px;   
+ }
+ .nameClass{
+   font-size: 12px;
+   width:auto;
+   height:auto;
+   padding-top: 3px;
+ }
+
+ select{
+   margin:0 0 10px 0;
+   text-align: center;
+ }
+
+ #restaurantImg{
+   height:50px;
+   width:60px;
+ }
+ footer{
+   margin: 0;
+   padding-top: 7px;
+ }
+
+ footer > p{
+   padding:0;
+   margin:0;
+   font-size: 12px;
+ }
+}
+/*  */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+
+  #restaurantListings{
+   width: 90%;
+   padding:0;
+   margin:0 auto;
+ } 
 }
 
-footer > p{
-  padding:5px 0 0 0;
-  margin:0;
-  font-size: 14px;
-}
-
-.container{
-  position: relative; 
-  min-height: 100vh;
-  width: 100%;
-  margin:0;
-  border: .5px solid lightblue;
-}
-/*
-p  {
-  height: auto;
-  width: 75%;
-  margin:0 auto;
-}*/
-
-h3{
-  font-weight: bold;
-  width:100%;
-  float:left;
-  font-size: 22px;
-  margin-bottom: 5px;  
-}
-
-
-#restaurantImg{
-  height: 100px;
-  width:110px;
-}
-
-#contentDiv{
-  font-size:0px;
-  border: 1px solid black;
-}
-
-#imgDiv, #infoDiv{
-  display:inline-block;
-}
-
-#infoDiv{
-  font-size: 12px;
-  padding:5px;
-}
-
-#restaurantImg1{
-  height: 100px;
-  width: 110px;
-}
-
-.checkboxClass{
-  display: inline-block;
-  vertical-align: middle;
-  margin:10px;
-}
-
-.checkboxClass input{
-  transform: scale(1.5);
-  float:left;
-}
-
-.checkboxClass label{
-  word-wrap: break-word;
-  line-height: 16px; 
-  float: left;
-  font-size: 18px;
-}
-
-select{
-  height: 30px;
-  width: 150px;
-  font-size: 16px;
-  border-radius: 5px;
-  margin-left: 15px;
-}
-
-.formLabelClass{
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.descriptionClass{
-  font-size: 20px;    
-  text-align:left;
-  margin-bottom:5px;
-}
-
-.textClass{
-  width:75%; 
-  margin: 0 auto;
-  padding:0;
-}
