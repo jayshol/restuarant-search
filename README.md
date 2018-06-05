@@ -34,6 +34,7 @@ It lists out all the restaurants in and around that area and displays their loca
 * Can filter search based on cuisines, vegetarian friendly, distance, vegan friendly and restaurants that are currently open.
 * It also populates the map with the markers for the restuarant listing got from the search.
 * Clicking on the marker in map as well as on any of the restaurant listing will open an info window with the rating for the respective restuarant.
+* Has two different styled maps, one for the day time and the other for the night time.
 
 ## Built With
 
